@@ -2,6 +2,7 @@ class SistemaVendas:
     def __init__(self):
         self.produtos = []
         self.clientes = []
+        self.vendas = {}
 
     def get_produtos(self):
         return self.produtos
@@ -14,5 +15,4 @@ class SistemaVendas:
 
     def set_clientes(self, clientes):
         self.clientes = clientes
-    
     
