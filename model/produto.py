@@ -1,5 +1,3 @@
-from sistema_vendas import SistemaVendas
-
 class Produto:
     def __init__(self, id: int, nome: str, cor: str, tamanho: str, preco: float) -> None:
         self.id = id
