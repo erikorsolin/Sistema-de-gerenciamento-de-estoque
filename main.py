@@ -1,5 +1,5 @@
-from view.tela_sistema_vendas import TelaSistemaVendas
+from view.tela_produto import TelaProduto
 
 if __name__ == "__main__":
-    TelaSistemaVendas().run()
+    TelaProduto().run()
     
