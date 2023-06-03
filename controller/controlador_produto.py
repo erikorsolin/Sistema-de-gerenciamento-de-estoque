@@ -1,12 +1,12 @@
 from model.produto import Produto
 from view.tela_produto import TelaProduto
-from random import randint
 import json
 
 class ControladorProduto:
     def __init__(self) -> None:
         self.tela_produto = TelaProduto()
     
+
 
     def adiciona_produto(self):
         id = self.tela_produto.pega_id()
@@ -35,7 +35,9 @@ class ControladorProduto:
         json_file.close() # Fecha o arquivo
         self.tela_produto.mostra_mensagem("Produto cadastrado com sucesso!")
     
-    
+
+
+
     def remove_produto(self) -> None:
         id = self.tela_produto.pega_id()
         # Abre o arquivo no modo de leitura e escrita
@@ -60,6 +62,8 @@ class ControladorProduto:
         json_file.truncate() 
         json_file.close()
         self.tela_produto.mostra_mensagem("Produto removido com sucesso!")
+
+
 
     
     def edita_produto(self) -> None:
@@ -92,13 +96,17 @@ class ControladorProduto:
         json_file.truncate() 
         json_file.close()
         self.tela_produto.mostra_mensagem("Produto editado com sucesso!")
-    
 
-    def run(self) -> None:
-        opcoes = {1: self.adiciona_produto, 2: self.remove_produto, 3: self.edita_produto}
-        while True:
-            opcao = self.tela_produto.mostra_opcoes()
-            if opcao == 0:
-                break
-            opcoes[opcao]()
+
+
+    def run(self):
+        json_file = open('produto.json', 'r+')
+        try:
+            dados = json.load(json_file)
+        except json.decoder.JSONDecodeError:
+            dados = {}
+        self.tela_produto.mostra_produtos(dados)
+        json_file.close()
+        self.tela_produto.iniciar()
+
         
