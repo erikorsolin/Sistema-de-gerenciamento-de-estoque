@@ -1,39 +1,27 @@
 import tkinter as tk
 from tkinter import ttk
 import customtkinter
+from controller.controlador_produto import ControladorProduto
 
-class TelaProduto:
+class TelaProduto(ControladorProduto):
     def __init__(self) -> None:
+        super().__init__()
         customtkinter.set_appearance_mode("dark")  # Modes: system (default), light, dark
         customtkinter.set_default_color_theme("dark-blue")  # Themes: blue (default), dark-blue, green
         self.tela = customtkinter.CTk()
         self.tela.geometry("700x580")
         self.tela.title("Cadastro de Produtos")
         self.scrollable_frame = customtkinter.CTkScrollableFrame(self.tela, width=500, height=300)
-        self.scrollable_frame.place(x=95, y=240)
-        
-        self.button1 = customtkinter.CTkButton(self.tela, text="Adicionar Produto", width=150, corner_radius=6, command=None)
-        self.button1.place(x=95, y=60)
-        self.button2 = customtkinter.CTkButton(self.tela, text="Remover Produto", width=150, corner_radius=6, command=None)
-        self.button2.place(x=95, y=100)
-        self.button3 = customtkinter.CTkButton(self.tela, text="Editar Produto", width=150, corner_radius=6, command=None)
-        self.button3.place(x=95, y=140)
-        self.button4 = customtkinter.CTkButton(self.tela, text="Atualizar", width=150, corner_radius=6, command=None)
-        self.button4.place(x=95, y=180)
+        self.scrollable_frame.place(x=95, y=240)      
+        self.buttons()
+        self.entrys()
 
-        self.entry1 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="ID")
-        self.entry1.place(x=450, y=20)
-        self.entry2 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="TIPO")
-        self.entry2.place(x=450, y=60)
-        self.entry3 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="COR")
-        self.entry3.place(x=450, y=100)
-        self.entry4 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="TAMANHO")
-        self.entry4.place(x=450, y=140)
-        self.entry5 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="PREÇO")
-        self.entry5.place(x=450, y=180)
 
-    def mostra_produtos(self, produtos: dict) -> None:
+    def mostra_produtos(self) -> None:
         # Cabeçalho da tabela
+        for widget in self.scrollable_frame.winfo_children():
+            widget.destroy()
+        produtos = self.retornar_produtos()
         headers = ["ID", "TIPO", "COR", "TAMANHO", "PREÇO"]
         num_columns = len(headers)
 
@@ -66,11 +54,56 @@ class TelaProduto:
         self.scrollable_frame.grid_rowconfigure(row, weight=1)
 
     
+    def entrys(self) -> None:
+        self.entry1 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="ID")
+        self.entry1.place(x=450, y=20)
+        self.entry2 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="TIPO")
+        self.entry2.place(x=450, y=60)
+        self.entry3 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="COR")
+        self.entry3.place(x=450, y=100)
+        self.entry4 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="TAMANHO")
+        self.entry4.place(x=450, y=140)
+        self.entry5 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="PREÇO")
+        self.entry5.place(x=450, y=180)
+    
+
+    def buttons(self) -> None:
+        self.button1 = customtkinter.CTkButton(self.tela, text="Adicionar Produto", width=150, corner_radius=6, command=lambda: self.adiciona_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco()))
+        self.button1.place(x=95, y=60)
+        self.button2 = customtkinter.CTkButton(self.tela, text="Remover Produto", width=150, corner_radius=6, command=lambda: self.remove_produto(self.pega_id()))
+        self.button2.place(x=95, y=100)
+        self.button3 = customtkinter.CTkButton(self.tela, text="Editar Produto", width=150, corner_radius=6, command=lambda: self.edita_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco()))
+        self.button3.place(x=95, y=140)
+        self.button4 = customtkinter.CTkButton(self.tela, text="Atualizar", width=150, corner_radius=6, command=self.iniciar)
+        self.button4.place(x=95, y=180)
+    
+
+
+    def pega_id(self) -> str:
+        return self.entry1.get().upper()
+    
+    def pega_tipo(self) -> str:
+        return self.entry2.get().upper()
+    
+    def pega_cor(self) -> str:
+        return self.entry3.get().upper()
+    
+    def pega_tamanho(self) -> str:
+        return self.entry4.get().upper()
+
+    def pega_preco(self) -> str:
+        return self.entry5.get()
+
+
     def mostra_mensagem(self, mensagem: str) -> None:
         pass
-
+    
+    def atualiza_tela(self) -> None:
+        # Mostra os produtos atualizados
+        self.mostra_produtos()
 
     def iniciar(self):
+        self.mostra_produtos()
         self.tela.mainloop()
     
     

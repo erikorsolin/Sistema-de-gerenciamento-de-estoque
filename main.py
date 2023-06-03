@@ -1,7 +1,6 @@
-from controller.controlador_produto import ControladorProduto
+from view.tela_produto import TelaProduto
 
 
 if __name__ == "__main__":
-    controlador = ControladorProduto()
-    controlador.run()
-    
+    tela_produto = TelaProduto()
+    tela_produto.iniciar()
