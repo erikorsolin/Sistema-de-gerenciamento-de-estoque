@@ -66,7 +66,7 @@ class ControladorProduto:
         if id not in dados:
             return
         # Edita o produto do dicionário
-        dados[str(id)]["tipo"] = tipo
+        dados[str(id)]["nome"] = tipo
         dados[str(id)]["cor"] = cor
         dados[str(id)]["tamanho"] = tamanho
         dados[str(id)]["preco"] = preco
