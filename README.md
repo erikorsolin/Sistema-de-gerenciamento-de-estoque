@@ -1,7 +1,6 @@
 # Sistema de venda de roupas
 ![image](https://github.com/erikorsolin/Sistema-de-venda-de-roupas/assets/107228254/6cc5f81e-3580-4d0e-9ea6-f236fe88df71)
 
-Este é um projeto referente à AA4 (Atividade Avaliativa 4) da disciplina INE5404 (Programação Orientada a Objetos II) da UFSC.
 O sistema de vendas de roupas foi desenvolvido em Python utilizando o padrão de projeto MVC (Model View Controller). O sistema permite realizar as operações CRUD (create, retrieve, update, delete) para o gerenciamento do estoque de roupas de uma loja. A interface gráfica moderna é desenvolvida com a biblioteca customtkinter e a persistência de dados é feita utilizando arquivos JSON.
 
 ## Funcionalidades
