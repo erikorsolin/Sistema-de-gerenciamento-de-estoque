@@ -7,7 +7,7 @@ class ControladorProduto:
 
     def adiciona_produto(self, id, nome, cor, tamanho, preco):
         # Abre o arquivo no modo de leitura e escrita
-        json_file = open('produto.json', 'r+')
+        json_file = open('produtos.json', 'r+')
         # Tenta ler o conteúdo do arquivo JSON existente
         try:
             dados = json.load(json_file)
@@ -31,7 +31,7 @@ class ControladorProduto:
 
     def remove_produto(self, id) -> None:
         # Abre o arquivo no modo de leitura e escrita
-        json_file = open('produto.json', 'r+')
+        json_file = open('produtos.json', 'r+')
         # Tenta ler o conteúdo do arquivo JSON existente
         try:
             dados = json.load(json_file)
@@ -55,7 +55,7 @@ class ControladorProduto:
     
     def edita_produto(self, id, tipo, cor, tamanho, preco) -> None:
         # Abre o arquivo no modo de leitura e escrita
-        json_file = open('produto.json', 'r+')
+        json_file = open('produtos.json', 'r+')
         # Tenta ler o conteúdo do arquivo JSON existente
         try:
             dados = json.load(json_file)
@@ -81,7 +81,7 @@ class ControladorProduto:
 
 
     def retornar_produtos(self):  
-        json_file = open('produto.json', 'r+')
+        json_file = open('produtos.json', 'r+')
         try:
             dados = json.load(json_file)
         except json.decoder.JSONDecodeError:
