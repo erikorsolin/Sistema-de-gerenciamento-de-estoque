@@ -67,14 +67,16 @@ class TelaProduto(ControladorProduto):
         self.entry4.place(x=450, y=140)
         self.entry5 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="PREÇO")
         self.entry5.place(x=450, y=180)
+        self.entry6 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="QUANTIDADE")
+        self.entry6.place(x=450, y=220)
     
 
     def buttons(self) -> None:
-        self.button1 = customtkinter.CTkButton(self.tela, text="Adicionar Produto", width=150, corner_radius=6, command=lambda: self.adiciona_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco()))
+        self.button1 = customtkinter.CTkButton(self.tela, text="Adicionar Produto", width=150, corner_radius=6, command=lambda: self.adiciona_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade()))
         self.button1.place(x=95, y=60)
         self.button2 = customtkinter.CTkButton(self.tela, text="Remover Produto", width=150, corner_radius=6, command=lambda: self.remove_produto(self.pega_id()))
         self.button2.place(x=95, y=100)
-        self.button3 = customtkinter.CTkButton(self.tela, text="Editar Produto", width=150, corner_radius=6, command=lambda: self.edita_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco()))
+        self.button3 = customtkinter.CTkButton(self.tela, text="Editar Produto", width=150, corner_radius=6, command=lambda: self.edita_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade()))
         self.button3.place(x=95, y=140)
         self.button4 = customtkinter.CTkButton(self.tela, text="Atualizar", width=150, corner_radius=6, command=self.iniciar)
         self.button4.place(x=95, y=180)
@@ -95,9 +97,8 @@ class TelaProduto(ControladorProduto):
     def pega_preco(self) -> str:
         return self.entry5.get()
 
-
-    def mostra_mensagem(self, mensagem: str) -> None:
-        pass
+    def pega_quantidade(self) -> int:
+        return self.entry6.get()
     
     def atualiza_tela(self) -> None:
         # Mostra os produtos atualizados
