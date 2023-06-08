@@ -1,7 +1,7 @@
 # Sistema de gerenciamento de estoque
 ![image](https://github.com/erikorsolin/Sistema-de-venda-de-roupas/assets/107228254/6cc5f81e-3580-4d0e-9ea6-f236fe88df71)
 
-O sistema de gerenciamento de estoque foi desenvolvido em Python utilizando o padrão de projeto MVC (Model View Controller), o projeto é altamente escalável para atender às necessidades dos diferentes tipos de comércio e fábricas. O sistema permite realizar as operações CRUD (create, retrieve, update, delete) para o gerenciamento do estoque de produtos. A interface gráfica foi desenvolvida com a biblioteca customtkinter e a persistência de dados é feita utilizando arquivos JSON.
+O sistema de gerenciamento de estoque foi desenvolvido em Python utilizando o padrão de projeto MVC (Model View Controller), o projeto é altamente escalável para atender às necessidades dos diferentes tipos de comércios e fábricas. O sistema permite realizar as operações CRUD (create, retrieve, update, delete) para o gerenciamento do estoque de produtos. A interface gráfica foi desenvolvida com a biblioteca customtkinter e a persistência de dados é feita utilizando arquivos JSON.
 
 ## Funcionalidades
 + Criação de novos itens de estoque, incluindo informações como ID, tipo, cor, tamanho, preço, quantidade.
