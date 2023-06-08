@@ -1,10 +1,11 @@
 class Produto:
-    def __init__(self, id: int, nome: str, cor: str, tamanho: str, preco: float) -> None:
+    def __init__(self, id: int, nome: str, cor: str, tamanho: str, preco: float, quantidade: int) -> None:
         self.id = str(id)
         self.nome = nome
         self.cor = cor
         self.tamanho = tamanho
         self.preco = preco
+        self.quantidade = quantidade
     
     def get_id(self):
         return self.id
@@ -35,3 +36,9 @@ class Produto:
 
     def set_preco(self, preco):
         self.preco = preco
+    
+    def get_quantidade(self):
+        return self.quantidade
+
+    def set_quantidade(self, quantidade):
+        self.quantidade = quantidade
