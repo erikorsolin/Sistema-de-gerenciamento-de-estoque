@@ -58,17 +58,17 @@ class TelaProduto(ControladorProduto):
     
     def entrys(self) -> None:
         self.entry1 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="ID")
-        self.entry1.place(x=450, y=20)
+        self.entry1.place(x=350, y=60)
         self.entry2 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="TIPO")
-        self.entry2.place(x=450, y=60)
+        self.entry2.place(x=350, y=100)
         self.entry3 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="COR")
-        self.entry3.place(x=450, y=100)
+        self.entry3.place(x=350, y=140)
         self.entry4 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="TAMANHO")
-        self.entry4.place(x=450, y=140)
+        self.entry4.place(x=520, y=60)
         self.entry5 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="PREÇO")
-        self.entry5.place(x=450, y=180)
+        self.entry5.place(x=520, y=100)
         self.entry6 = customtkinter.CTkEntry(self.tela, width=150, corner_radius=6, placeholder_text="QUANTIDADE")
-        self.entry6.place(x=450, y=220)
+        self.entry6.place(x=520, y=140)
     
 
     def buttons(self) -> None:
