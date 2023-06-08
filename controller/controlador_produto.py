@@ -2,10 +2,8 @@ from model.produto import Produto
 import json
 
 class ControladorProduto:
-    def __init__(self):
-        pass
-
-    def adiciona_produto(self, id, tipo, cor, tamanho, preco, quantidade) -> None:
+    @staticmethod
+    def adiciona_produto(id, tipo, cor, tamanho, preco, quantidade) -> None:
         # Abre o arquivo no modo de leitura e escrita
         json_file = open('produtos.json', 'r+')
         # Tenta ler o conteúdo do arquivo JSON existente
@@ -25,11 +23,9 @@ class ControladorProduto:
         # Trunca o restante do arquivo, caso o novo conteúdo seja menor que o antigo
         json_file.truncate() 
         json_file.close() # Fecha o arquivo
-    
 
-
-
-    def remove_produto(self, id) -> None:
+    @staticmethod
+    def remove_produto(id) -> None:
         # Abre o arquivo no modo de leitura e escrita
         json_file = open('produtos.json', 'r+')
         # Tenta ler o conteúdo do arquivo JSON existente
@@ -52,8 +48,8 @@ class ControladorProduto:
         json_file.close()
 
 
-    
-    def edita_produto(self, id, tipo, cor, tamanho, preco, quantidade) -> None:
+    @staticmethod
+    def edita_produto(id, tipo, cor, tamanho, preco, quantidade) -> None:
         # Abre o arquivo no modo de leitura e escrita
         json_file = open('produtos.json', 'r+')
         # Tenta ler o conteúdo do arquivo JSON existente
@@ -80,8 +76,8 @@ class ControladorProduto:
         json_file.close()
 
 
-
-    def retornar_produtos(self):  
+    @staticmethod
+    def retornar_produtos():  
         json_file = open('produtos.json', 'r+')
         try:
             dados = json.load(json_file)

@@ -3,9 +3,8 @@ from tkinter import ttk
 import customtkinter
 from controller.controlador_produto import ControladorProduto
 
-class TelaProduto(ControladorProduto):
+class TelaProduto():
     def __init__(self) -> None:
-        super().__init__()
         customtkinter.set_appearance_mode("dark")  # Modes: system (default), light, dark
         customtkinter.set_default_color_theme("dark-blue")  # Themes: blue (default), dark-blue, green
         self.tela = customtkinter.CTk()
@@ -21,7 +20,7 @@ class TelaProduto(ControladorProduto):
         # Cabeçalho da tabela
         for widget in self.scrollable_frame.winfo_children():
             widget.destroy()
-        produtos = self.retornar_produtos()
+        produtos = ControladorProduto.retornar_produtos()
         headers = ["ID", "TIPO", "COR", "TAMANHO", "PREÇO", "QUANTIDADE"]
         num_columns = len(headers)
 
@@ -72,11 +71,11 @@ class TelaProduto(ControladorProduto):
     
 
     def buttons(self) -> None:
-        self.button1 = customtkinter.CTkButton(self.tela, text="Adicionar Produto", width=150, corner_radius=6, command=lambda: self.adiciona_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade()))
+        self.button1 = customtkinter.CTkButton(self.tela, text="Adicionar Produto", width=150, corner_radius=6, command=lambda: ControladorProduto.adiciona_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade()))
         self.button1.place(x=95, y=60)
-        self.button2 = customtkinter.CTkButton(self.tela, text="Remover Produto", width=150, corner_radius=6, command=lambda: self.remove_produto(self.pega_id()))
+        self.button2 = customtkinter.CTkButton(self.tela, text="Remover Produto", width=150, corner_radius=6, command=lambda: ControladorProduto.remove_produto(self.pega_id()))
         self.button2.place(x=95, y=100)
-        self.button3 = customtkinter.CTkButton(self.tela, text="Editar Produto", width=150, corner_radius=6, command=lambda: self.edita_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade()))
+        self.button3 = customtkinter.CTkButton(self.tela, text="Editar Produto", width=150, corner_radius=6, command=lambda: ControladorProduto.edita_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade()))
         self.button3.place(x=95, y=140)
         self.button4 = customtkinter.CTkButton(self.tela, text="Atualizar", width=150, corner_radius=6, command=self.iniciar)
         self.button4.place(x=95, y=180)
