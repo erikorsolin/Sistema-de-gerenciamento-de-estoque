@@ -1,7 +1,7 @@
 class Produto:
-    def __init__(self, id: int, nome: str, cor: str, tamanho: str, preco: float, quantidade: int) -> None:
+    def __init__(self, id: int, tipo: str, cor: str, tamanho: str, preco: float, quantidade: int) -> None:
         self.id = str(id)
-        self.nome = nome
+        self.tipo = tipo
         self.cor = cor
         self.tamanho = tamanho
         self.preco = preco
@@ -10,8 +10,8 @@ class Produto:
     def get_id(self):
         return self.id
        
-    def get_nome(self):
-        return self.nome
+    def get_tipo(self):
+        return self.tipo
     
     def get_cor(self):
         return self.cor
@@ -25,8 +25,8 @@ class Produto:
     def set_id(self, id):
         self.id = id
     
-    def set_nome(self, nome):
-        self.nome = nome
+    def set_tipo(self, tipo):
+        self.tipo = tipo
     
     def set_cor(self, cor):
         self.cor = cor
