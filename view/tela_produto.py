@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import customtkinter
 from controller.controlador_produto import ControladorProduto
+from model.produto import Produto
 
 class TelaProduto():
     def __init__(self) -> None:
@@ -72,7 +73,7 @@ class TelaProduto():
     
 
     def buttons(self) -> None:
-        self.button1 = customtkinter.CTkButton(self.tela, text="Adicionar Produto", width=150, corner_radius=6,  command=lambda: ControladorProduto.adiciona_produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade()))
+        self.button1 = customtkinter.CTkButton(self.tela, text="Adicionar Produto", width=150, corner_radius=6,  command=lambda: ControladorProduto.adiciona_produto(self.cria_produto()))
         self.button1.place(x=95, y=60)
         self.button2 = customtkinter.CTkButton(self.tela, text="Remover Produto", width=150, corner_radius=6,  command=lambda: ControladorProduto.remove_produto(self.pega_id()))
         self.button2.place(x=95, y=100)
@@ -99,6 +100,9 @@ class TelaProduto():
 
     def pega_quantidade(self) -> int:
         return self.entry6.get()
+    
+    def cria_produto(self) -> Produto:
+        return Produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade())
     
     def atualiza_tela(self) -> None:
         # Mostra os produtos atualizados
