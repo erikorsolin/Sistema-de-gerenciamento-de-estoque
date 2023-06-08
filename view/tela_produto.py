@@ -39,7 +39,7 @@ class TelaProduto(ControladorProduto):
         for id, produto in produtos.items():
             label_id = ttk.Label(self.scrollable_frame, text=id, style="DarkBlue.TLabel")
             label_id.grid(row=row, column=0, padx=10, pady=5, sticky="nsew")
-            label_tipo = ttk.Label(self.scrollable_frame, text=produto.get("nome", ""), style="DarkBlue.TLabel")
+            label_tipo = ttk.Label(self.scrollable_frame, text=produto.get("tipo", ""), style="DarkBlue.TLabel")
             label_tipo.grid(row=row, column=1, padx=10, pady=5, sticky="nsew")
             label_cor = ttk.Label(self.scrollable_frame, text=produto.get("cor", ""), style="DarkBlue.TLabel")
             label_cor.grid(row=row, column=2, padx=10, pady=5, sticky="nsew")
@@ -77,7 +77,6 @@ class TelaProduto(ControladorProduto):
         self.button4 = customtkinter.CTkButton(self.tela, text="Atualizar", width=150, corner_radius=6, command=self.iniciar)
         self.button4.place(x=95, y=180)
     
-
 
     def pega_id(self) -> str:
         return self.entry1.get().upper()
