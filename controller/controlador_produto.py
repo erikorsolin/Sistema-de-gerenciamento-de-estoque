@@ -3,7 +3,7 @@ import json
 
 class ControladorProduto:
     @staticmethod
-    def adiciona_produto(id, tipo, cor, tamanho, preco, quantidade) -> None:
+    def adiciona_produto(objeto) -> None:
         # Abre o arquivo no modo de leitura e escrita
         json_file = open('produtos.json', 'r+')
         # Tenta ler o conteúdo do arquivo JSON existente
@@ -12,8 +12,8 @@ class ControladorProduto:
         except json.decoder.JSONDecodeError:
         # Caso o arquivo esteja vazio ou inválido, inicializa com um dicionário vazio
             dados = {}
-
-        produto = {"tipo": tipo, "cor": cor, "tamanho": tamanho, "preco": preco, "quantidade": quantidade}
+        id = objeto.get_id()
+        produto = {"tipo": objeto.get_tipo(), "cor": objeto.get_cor(), "tamanho": objeto.get_tamanho(), "preco": objeto.get_preco(), "quantidade": objeto.get_quantidade()}
         dados[id] = produto  # Adiciona o novo produto ao dicionário
 
         # Retorna ao início do arquivo para sobrescrever o conteúdo antigo com o novo
