@@ -1,10 +1,10 @@
-# Sistema de venda de roupas
+# Sistema de gerenciamento de estoque
 ![image](https://github.com/erikorsolin/Sistema-de-venda-de-roupas/assets/107228254/6cc5f81e-3580-4d0e-9ea6-f236fe88df71)
 
-O sistema de vendas de roupas foi desenvolvido em Python utilizando o padrão de projeto MVC (Model View Controller). O sistema permite realizar as operações CRUD (create, retrieve, update, delete) para o gerenciamento do estoque de roupas de uma loja. A interface gráfica moderna é desenvolvida com a biblioteca customtkinter e a persistência de dados é feita utilizando arquivos JSON.
+O sistema de gerenciamento de estoque foi desenvolvido em Python utilizando o padrão de projeto MVC (Model View Controller), o projeto é altamente escalável para atender às necessidades dos diferentes tipos de comércio e fábricas. O sistema permite realizar as operações CRUD (create, retrieve, update, delete) para o gerenciamento do estoque de produtos. A interface gráfica foi desenvolvida com a biblioteca customtkinter e a persistência de dados é feita utilizando arquivos JSON.
 
 ## Funcionalidades
-+ Criação de novos itens de estoque, incluindo informações como ID, tipo, cor, tamanho, preço.
++ Criação de novos itens de estoque, incluindo informações como ID, tipo, cor, tamanho, preço, quantidade.
 + Visualização dos itens de estoque existentes.
 + Atualização das informações de um item de estoque específico.
 + Remoção de um item de estoque existente.
@@ -22,12 +22,12 @@ Para executar o sistema de vendas de roupas, você precisa ter as seguintes bibl
  ## Como executar o sistema
  1. Clone este repositório para o seu ambiente local:
  ```
- git clone https://github.com/erikorsolin/Sistema-de-venda-de-roupas.git
+ git clone https://github.com/erikorsolin/Sistema-de-gerenciamento-de-estoque.git
  ```
  
  2. Navegue até o diretório do projeto:
   ```
- cd Sistema-de-venda-de-roupas
+ cd Sistema-de-gerenciamento-de-estoque
  ```
  
  3. Execute o arquivo principal do sistema:
