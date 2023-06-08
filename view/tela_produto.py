@@ -22,7 +22,7 @@ class TelaProduto(ControladorProduto):
         for widget in self.scrollable_frame.winfo_children():
             widget.destroy()
         produtos = self.retornar_produtos()
-        headers = ["ID", "TIPO", "COR", "TAMANHO", "PREÇO"]
+        headers = ["ID", "TIPO", "COR", "TAMANHO", "PREÇO", "QUANTIDADE"]
         num_columns = len(headers)
 
         # Definir estilo dos rótulos com a cor de fundo do tema dark-blue
@@ -47,6 +47,8 @@ class TelaProduto(ControladorProduto):
             label_tamanho.grid(row=row, column=3, padx=10, pady=5, sticky="nsew")
             label_preco = ttk.Label(self.scrollable_frame, text=produto.get("preco", ""), style="DarkBlue.TLabel")
             label_preco.grid(row=row, column=4, padx=10, pady=5, sticky="nsew")
+            label_quantidade = ttk.Label(self.scrollable_frame, text=produto.get("quantidade", ""), style="DarkBlue.TLabel")
+            label_quantidade.grid(row=row, column=5, padx=10, pady=5, sticky="nsew")
             row += 1
         # Centralizar a tabela dentro do self.scrollable_frame
         for i in range(num_columns):
