@@ -1,4 +1,3 @@
-from model.produto import Produto
 import json
 
 class ControladorProduto:
