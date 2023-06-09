@@ -77,7 +77,7 @@ class ControladorProduto:
 
 
     @staticmethod
-    def retornar_produtos():  
+    def retornar_produtos() -> dict:  
         json_file = open('produtos.json', 'r+')
         try:
             dados = json.load(json_file)
