@@ -16,7 +16,7 @@ Para executar o sistema de vendas de roupas, você precisa ter as seguintes bibl
 
  Você pode instalar as bibliotecas utilizando o gerenciador de pacotes pip. Execute o seguinte comando:
  ```
- pip install tkinter customtkinter
+ pip install customtkinter
  ```
  
  ## Como executar o sistema
