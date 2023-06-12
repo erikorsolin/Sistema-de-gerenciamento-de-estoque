@@ -3,7 +3,7 @@ import json
 class ControladorProduto:
     @staticmethod
     def adiciona_produto(objeto) -> None:
-        if objeto is not None:
+        if objeto:
             # Abre o arquivo no modo de leitura e escrita
             json_file = open('produtos.json', 'r+')
             # Tenta ler o conteúdo do arquivo JSON existente
