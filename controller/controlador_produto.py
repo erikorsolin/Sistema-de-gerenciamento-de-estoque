@@ -23,6 +23,7 @@ class ControladorProduto:
         json_file.truncate() 
         json_file.close() # Fecha o arquivo
 
+
     @staticmethod
     def remove_produto(id) -> None:
         # Abre o arquivo no modo de leitura e escrita
@@ -61,11 +62,17 @@ class ControladorProduto:
         if id not in dados:
             return
         # Edita o produto do dicionário
-        dados[str(id)]["tipo"] = tipo
-        dados[str(id)]["cor"] = cor
-        dados[str(id)]["tamanho"] = tamanho
-        dados[str(id)]["preco"] = preco
-        dados[str(id)]["quantidade"] = quantidade
+        if tipo.isdigit() or tipo.isalpha():
+            dados[str(id)]["tipo"] = tipo
+        if cor.isalpha():
+            dados[str(id)]["cor"] = cor
+        if tamanho.isdigit() or tamanho.isalpha():
+            dados[str(id)]["tamanho"] = tamanho
+        if preco.isdigit():
+            dados[str(id)]["preco"] = preco        
+        if quantidade.isdigit():
+            dados[str(id)]["quantidade"] = quantidade
+        
         # Retorna ao início do arquivo para sobrescrever o conteúdo antigo com o novo
         json_file.seek(0)
         # Escreve o dicionário completo no arquivo JSON
