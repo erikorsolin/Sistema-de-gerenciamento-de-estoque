@@ -102,7 +102,8 @@ class TelaProduto:
         return self.entry6.get()
     
     def cria_produto(self) -> Produto:
-        return Produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade())
+        if self.pega_id().isdigit() and self.pega_preco().isdigit() and self.pega_quantidade().isdigit() and self.pega_tipo().isalpha() and self.pega_cor().isalpha() and self.pega_tamanho().isalpha() and self.pega_quantidade().isdigit():
+            return Produto(self.pega_id(), self.pega_tipo(), self.pega_cor(), self.pega_tamanho(), self.pega_preco(), self.pega_quantidade())
     
     def atualiza_tela(self) -> None:
         # Mostra os produtos atualizados
