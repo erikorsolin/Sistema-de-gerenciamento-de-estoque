@@ -4,7 +4,7 @@ import customtkinter
 from controller.controlador_produto import ControladorProduto
 from model.produto import Produto
 
-class TelaProduto():
+class TelaProduto:
     def __init__(self) -> None:
         self.tela = customtkinter.CTk()
         customtkinter.set_appearance_mode("dark")

@@ -1,44 +1,37 @@
 {
     "1": {
-        "tipo": "CAMISETA",
+        "tipo": "CAL\u00c7A",
         "cor": "BRANCA",
         "tamanho": "G",
         "preco": "120",
-        "quantidade": "20"
+        "quantidade": "18"
     },
     "2": {
-        "tipo": "CAMISETA",
-        "cor": "PRETA",
-        "tamanho": "P",
-        "preco": "40",
-        "quantidade": "30"
+        "tipo": "CAL\u00c7A",
+        "cor": "BRANCA",
+        "tamanho": "GG",
+        "preco": "120",
+        "quantidade": "18"
     },
     "3": {
         "tipo": "CAL\u00c7A",
-        "cor": "PRETA",
+        "cor": "AMARELA",
         "tamanho": "GG",
         "preco": "120",
-        "quantidade": "20"
+        "quantidade": "12"
     },
     "4": {
-        "tipo": "CAL\u00c7A",
-        "cor": "PRETA",
-        "tamanho": "G",
-        "preco": "120",
+        "tipo": "CAMISETA",
+        "cor": "BRANCA",
+        "tamanho": "M",
+        "preco": "30",
         "quantidade": "20"
     },
     "5": {
-        "tipo": "CAL\u00c7A",
-        "cor": "BRANCA",
-        "tamanho": "GG",
+        "tipo": "CAMISETA",
+        "cor": "AMARELA",
+        "tamanho": "EGG",
         "preco": "120",
-        "quantidade": "10"
-    },
-    "6": {
-        "tipo": "CASACO",
-        "cor": "PRETO",
-        "tamanho": "GG",
-        "preco": "190",
-        "quantidade": "2"
+        "quantidade": "20"
     }
 }

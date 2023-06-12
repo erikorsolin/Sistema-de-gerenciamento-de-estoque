@@ -1,6 +1,6 @@
-from view.tela_produto import TelaProduto
+from view.tela_inicial import TelaInicial
 
 
 if __name__ == "__main__":
-    tela_produto = TelaProduto()
-    tela_produto.iniciar()
+    tela_inicial = TelaInicial()
+    tela_inicial.mostra_tela()
