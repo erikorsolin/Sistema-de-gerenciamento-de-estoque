@@ -4,10 +4,12 @@
 O sistema de gerenciamento de estoque foi desenvolvido em Python utilizando o padrão de projeto MVC (Model View Controller), o projeto é altamente escalável para atender às necessidades dos diferentes tipos de comércios e fábricas. O sistema permite realizar as operações CRUD (create, retrieve, update, delete) para o gerenciamento do estoque de produtos. A interface gráfica foi desenvolvida com a biblioteca customtkinter e a persistência de dados é feita utilizando arquivos JSON.
 
 ## Funcionalidades
++ Tela de login com senha para acesso ao sistema.
 + Criação de novos itens de estoque, incluindo informações como ID, tipo, cor, tamanho, preço, quantidade.
 + Visualização dos itens de estoque existentes.
 + Atualização das informações de um item de estoque específico.
 + Remoção de um item de estoque existente.
+
 
 ## Pré-Requisitos
 Para executar o sistema de vendas de roupas, você precisa ter as seguintes bibliotecas instaladas:
